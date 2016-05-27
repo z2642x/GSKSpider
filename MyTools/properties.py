@@ -2,9 +2,10 @@ class Properties:
     __DEFAULT_KEY_DELIMITER = "="
     __DEFAULT_VALUE_DELIMITER = ","
 
-    def __init__(self, filename):
+    def __init__(self, filename, delimiter=__DEFAULT_VALUE_DELIMITER):
         self.filename = filename
         self.__properties = {}
+        self.__DEFAULT_VALUE_DELIMITER = delimiter
         self.__init_properties()
 
     def __init_properties(self):

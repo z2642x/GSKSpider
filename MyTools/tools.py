@@ -62,7 +62,7 @@ class URLTool:
     @staticmethod
     def get_page_content(opener, url, data=None):
         try:
-            url_response = opener.open(url, data, timeout=30)
+            url_response = opener.open(url, data)
             content_encoding = url_response.getheader('Content-Encoding')
             if content_encoding is not None and 'gzip' in content_encoding:
                 page_content = gzip.decompress(url_response.read())
